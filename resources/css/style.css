@@ -52,7 +52,7 @@ input:focus {
   margin-top: 0;
   margin-bottom: 0;
 }
-#search-results{
+.track{
   display: flex;
   align-items: center;
   border-bottom: thin solid rgb(204,204,204);
@@ -60,6 +60,6 @@ input:focus {
 #search-results i{
   color: rgb(255, 0, 171);
 }
-#search-results:hover{
+.track:hover{
   background-color: rgb(239,237,242);
 }

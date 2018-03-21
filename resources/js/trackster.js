@@ -12,6 +12,21 @@ var Trackster = {};
   Append each "row" to the container in the body to display all tracks.
 */
 Trackster.renderTracks = function(tracks) {
+var tracksLen = tracks.track.length;
+console.log(tracks);
+console.log(tracksLen);
+  for (var i = 0; i <= tracksLen; i++) {
+    var mediumAlbumArt= tracks.track[i].image[1]["#text"];
+    var htmlTrackRow=
+    '<div class="row track">'+
+      '<a class="col-lg-1 col-lg-offset-1" href='+tracks.track[i].url+'><i class="fa fa-2x fa-play-circle-o"></i></a>'+
+      '<p class="col-lg-4">'+tracks.track[i].name+'</p>'+
+      '<p class="col-lg-2">'+tracks.track[i].artist+'</p>'+
+      '<img src='+mediumAlbumArt+'>'+
+      '<p class="col-lg-2">'+tracks.track[i].listeners+'</p>'+
+    '</div>';
+    $('#search-results').append(htmlTrackRow);
+};
 
 };
 
@@ -26,7 +41,8 @@ Trackster.searchTracksByTitle = function(title) {
       dataType: 'jsonp',
       success: function(data){
         console.log(data);
+        Trackster.renderTracks(data.results.trackmatches);
       }
     });
-  });
-};
+    });
+  };
