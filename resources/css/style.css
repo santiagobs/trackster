@@ -60,6 +60,9 @@ input:focus {
 #search-results i{
   color: rgb(255, 0, 171);
 }
+#search-results img{
+padding: 0.5rem 0;
+}
 .track:hover{
   background-color: rgb(239,237,242);
 }
